@@ -19,11 +19,10 @@
 """
 Roll my own "template system".
 """
-import cgi
+
 import cgitb
 cgitb.enable()
-
-from cgi import escape
+from html import escape
 
 __all__ = ['login_page', 'secret_page', 'after_login_incorrect']
 
@@ -32,6 +31,7 @@ def login_page():
     """
     Returns the HTML for the login page.
     """
+    
 
     return _wrapper(r"""
     <h1> Welcome! </h1>
@@ -128,3 +128,5 @@ def _wrapper(page):
     </body>
     </html>
     """)
+
+
